@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    --white: #ffffff;
+    --light-blue: rgb(82, 108, 185)e;
+    /* --red: #4169e1; */
+    --yellow: #f8bc1a;
+    --black: #000000;
+    --red: #ff0000;
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: #ff0000;
+}
+
+::selection {
+    color: white;
+    background: #ff0000;
+
+}
+
+body {
+
+    background: linear-gradient(48deg, #ff0000, #000000, #920000);
+    background-size: 180% 180%;
+    animation: gradient-animation 6s ease infinite;
+    min-height: 100vh;
+}
+
+
+
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    margin-top: 26px;
+    width: 90%;
+    box-shadow: rgba(220, 112, 112, 0.2) 0px 7px 29px 0px;
+    padding: 16px;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 8px;
+}
+
+.container .title {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Mulish', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: var(--white);
+
+}
+
+.tab-menu {
+    margin: 2px;
+    padding: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 0.5px solid #80808030;
+    border-bottom: 0.5px solid #80808030;
+}
+
+.menu1,
+.menu2,
+.menu3 {
+    text-align: center;
+    line-height: 32px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Mulish', sans-serif;
+}
+
+.active {
+    color: #086034;
+    border-bottom: 2px solid #086034;
+}
+
+.tab-title {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Mulish', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    /* justify-content: space-between; */
+    justify-content: space-evenly;
+
+    align-items: center;
+}
+
+.logo a img {
+    width: 160px;
+}
+
+.heading-text {
+    text-align: center;
+    font-size: 24px;
+    color: var(--red);
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace
+}
+
+.personal-details {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 26px;
+    justify-content: space-between;
+
+}
+
+.personal-details div {
+    flex: 0 0 33.333333%;
+
+}
+
+.personal-details div label {
+    width: 124px;
+}
+
+.personal-details div input,
+select {
+    width: 250px;
+    padding: 8px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 4px var(--red);
+
+}
+
+select option:hover {
+
+    background-color: #a4000b !important;
+
+}
+
+select.decorated option:hover {
+    box-shadow: 0 0 10px 100px #1882A8 inset !important;
+}
+
+select:focus {
+    border-color: var(--red);
+    outline: none;
+    box-shadow: 0 0 2px var(--white);
+}
+
+option {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+
+
+
+
+select option:checked {
+    background-color: var(--red) !important;
+}
+
+form .button {
+    margin-top: 32px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+form .button input {
+    width: 250px;
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+}
+
+
+
+/* CSS */
+.check-button,
+.registration-button {
+    padding: 8px 30px !important;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    border: 0px;
+    font-weight: 700;
+    box-shadow: 0px 0px 14px -7px #1d1b18;
+
+    background-image: linear-gradient(48deg, #ff0000, #000000, #920000);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.check-button:hover,
+.registration-button:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.check-button:active,
+.registration-button:active {
+    transform: scale(0.95);
+}
+
+.info {
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: var(--red);
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--white);
+    transform-origin: bottom right;
+    transition: transform 0.35s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.copyright {
+    position: relative;
+    line-height: 10px;
+    text-align: center;
+    top: 14px;
+    font-size: 16px;
+    margin-bottom: 36px;
+    color: var(--white);
+
+}
+
+.payment {
+    width: 100%;
+}
+
+table {
+    position: relative;
+    top: 50%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    margin-top: 100px;
+}
+
+.table-body {
+    margin-top: 100px;
+
+}
+
+table tr {
+    margin-bottom: 10px;
+}
+
+table tr td {
+    padding-right: 22px;
+    padding-left: 22px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.note {
+    color: #171717;
+    font-size: 12px;
+}
+
+.payment-button-div {
+    text-align: center;
+}
+
+.payment .payment-button {
+    width: 146px;
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    background-color: #236e4993;
+
+}
+
+/* CSS */
+.button-57 {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #18181a;
+    color: #18181a;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 10px;
+    padding: 12px 24px;
+    text-decoration: none;
+    cursor: pointer;
+    background: #fff;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    outline: none;
+    border: #000000;
+}
+
+.button-57 span:first-child {
+    position: relative;
+    transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+    z-index: 10;
+}
+
+.button-57 span:last-child {
+    color: white;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+    z-index: 100;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translateY(225%) translateX(-50%);
+    height: 4px;
+    line-height: 4px;
+}
+
+.button-57:after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform-origin: bottom center;
+    transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+    transform: skewY(9.3deg) scaleY(0);
+    z-index: 50;
+}
+
+.button-57:hover:after {
+    transform-origin: bottom center;
+    transform: skewY(9.3deg) scaleY(2);
+}
+
+.button-57:hover span:last-child {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 1;
+    transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+#myPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 85%;
+    transform: translate(-50%, -50%);
+    background-color: var(--black);
+    color: var(--red);
+    padding: 20px;
+    border: 1px solid var(--red);
+    font-size: 14px;
+
+}
+
+.last-line {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 26px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.last-line div {
+    flex: 0 0 33.333333%;
+
+}
+
+.last-line label {
+    width: 124px;
+
+}
+
+.last-line a {
+    display: block;
+    width: 250px;
+    padding: 8px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+
+}
+
+.add-more-player {
+    height: 40px;
+    width: 180px;
+    background-color: var(--red);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    text-decoration: none;
+
+}
+
+.add-more-player:hover {
+    background-color: white;
+    color: royalblue;
+}
+
+.payment-link {
+
+    align-self: center;
+
+}
+
+.payment-div {
+    width: 250px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 425px) {
+    .payment-link a {
+        display: inline-block;
+        width: 250px;
+        align-self: center;
+
+    }
+
+    .payment-div {
+        flex: 0 0 100% !important;
+
+    }
+
+    .personal-details div input,
+    select {
+        width: 80vw;
+
+
+    }
+
+    .heading-text {
+        font-size: 14px;
+    }
+
+    .logo a img {
+        width: 120px;
+    }
+}
+
+
